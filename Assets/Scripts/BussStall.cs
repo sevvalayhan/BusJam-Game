@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class BussStall : MonoBehaviour
 {
-    [SerializeField] public Vector3 BusStallPos;
+    [NonSerialized] public Vector3 BusStallPos;
     public bool IsAvailable;
     public static BussStall Instance;
     private void Start()

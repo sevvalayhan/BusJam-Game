@@ -7,7 +7,7 @@ public class GridManager : MonoBehaviour
     public GridCell BussStall;
     public void SetInitialValues()
     {
-        //LevelManager.instance.cellDic.Add(BussStall.cellCoord,BussStall);
+        LevelManager.instance.cellDic.Add(BussStall.cellCoord,BussStall);
         int cellInGridListCount = cellInGridList.Count;
         for (int i = 0; i < cellInGridListCount; i++)
         {
@@ -37,7 +37,10 @@ public class GridManager : MonoBehaviour
         Queue<GridCell> gridCells = new Queue<GridCell>();
         foreach (var stallCell in StallCellList)
         {
-            gridCells.Enqueue(stallCell);
+            if (stallCell.IsAvailable)
+            {
+                gridCells.Enqueue(stallCell);
+            }
         }
         return gridCells.Dequeue();        
     }

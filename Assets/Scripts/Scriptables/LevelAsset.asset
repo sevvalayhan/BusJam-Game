@@ -12,9 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bee81af78330a6443a72362fd8a5e47c, type: 3}
   m_Name: LevelAsset
   m_EditorClassIdentifier: 
-  levelPrefabs:
-  - {fileID: 7288013740370090399, guid: 62a13e18ef763b248925c2e5f3e0458d, type: 3}
-  stickmanPrefabs:
-  - {fileID: 8695967381533925540, guid: 7f108116b2aab224b9606330d48b26fe, type: 3}
-  - {fileID: 5127872637353538162, guid: e3e7575dfdaf0ab4d837562d49852b03, type: 3}
-  - {fileID: 3202566433851113033, guid: 5a2768f8b0618744295f6e15088a6d92, type: 3}
+  levelPrefabs: []
+  stickmanPrefabs: []

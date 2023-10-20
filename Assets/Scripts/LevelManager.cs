@@ -19,7 +19,6 @@ public class LevelManager : MonoBehaviour
     public GridCell endingCell;
     RaycastHit raycastHit;
     int layerMask = (1 << 6);
-
     private void Awake()
     {
         instance = this;
@@ -50,17 +49,18 @@ public class LevelManager : MonoBehaviour
                 {
                     startingCell = _rayGrid;
                 }
-                else if (bussController.CurrentBuss.BussColor == startingCell.gridCellColor)
+                if (bussController.CurrentBuss.BussColor == startingCell.gridCellColor)
                 {
                     endingCell = gridManager.BussStall;
+                    bussController.CurrentBuss.Capacity++;
                 }
                 else
                 {
                     GridCell stall = gridManager.CurrentStall();
                     if (stall != null && startingCell != null)
                     {
-                        stall.IsAvailable = false;
                         endingCell = stall;
+                        stall.IsAvailable = false;                        
                         SendStickmanToTargetCell();
                         Debug.Log(stall.gridCellColor);
                     }
